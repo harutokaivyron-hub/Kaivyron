@@ -205,7 +205,7 @@ header::after {
 .text-block { background: #111111; border: 1px solid #4d4d4d; border-radius: 12px; padding: 18px; margin-top: 12px; }
 .text-block p { font-size: 0.95rem; line-height: 1.7; color: #d5d5d5; }
 
-.settings-btn { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 1.4rem; cursor: pointer; opacity: 0.65; padding: 6px; }
+.settings-btn { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 1.6rem; cursor: pointer; opacity: 1; padding: 6px; color: #ffffff; }
 .settings-btn:hover { opacity: 1; }
 .settings-menu { position: absolute; top: 54px; right: 12px; background: #111214; border: 1px solid #4d4d4d; border-radius: 10px; padding: 6px; display: none; z-index: 50; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
 .settings-menu.show { display: block; }
