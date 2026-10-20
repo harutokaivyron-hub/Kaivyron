@@ -195,3 +195,5 @@ header::after {
 
 .row-title { flex: 1; min-width: 0; }
 .row-sub { font-size: 0.72rem; color: #8f8f8f; margin-top: 3px; letter-spacing: 0.02em; }
+
+.row-title .last-upd { margin-left: 0; margin-top: 5px; display: block; }
