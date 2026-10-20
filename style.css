@@ -1,8 +1,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background: #07070d;
-  color: #e8e6f0;
+  background: #000000;
+  color: #ffffff;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   min-height: 100vh;
   display: flex;
@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-/* soft purple glow behind everything */
+/* soft white glow behind everything */
 .glow {
   position: fixed;
   top: -200px;
@@ -19,7 +19,7 @@ body {
   transform: translateX(-50%);
   width: 700px;
   height: 500px;
-  background: radial-gradient(ellipse, rgba(124, 58, 237, 0.28), transparent 70%);
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.10), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -35,16 +35,13 @@ header {
   font-size: clamp(2.4rem, 9vw, 4.2rem);
   letter-spacing: 0.22em;
   font-weight: 800;
-  background: linear-gradient(180deg, #ffffff, #a78bfa 55%, #6d28d9);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 42px rgba(139, 92, 246, 0.35);
+  color: #ffffff;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
 }
 
 .tagline {
   margin-top: 10px;
-  color: #9d97b8;
+  color: #b5b5b5;
   letter-spacing: 0.3em;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -62,8 +59,8 @@ main {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  border: 1px solid rgba(139, 92, 246, 0.35);
-  background: linear-gradient(160deg, rgba(30, 24, 54, 0.9), rgba(12, 10, 24, 0.95));
+  border: 1px solid #4d4d4d;
+  background: #111111;
   border-radius: 16px;
   padding: 20px 22px;
   margin-top: 18px;
@@ -73,8 +70,8 @@ main {
 
 .card:hover, .sub-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(167, 139, 250, 0.8);
-  box-shadow: 0 8px 30px rgba(109, 40, 217, 0.28);
+  border-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.12);
 }
 
 .card h2 { font-size: 1.25rem; font-weight: 700; }
@@ -83,7 +80,7 @@ main {
 
 .arrow {
   font-size: 1.2rem;
-  color: #a78bfa;
+  color: #ffffff;
   transition: transform 0.25s ease;
 }
 
@@ -107,39 +104,42 @@ main {
   margin-top: 12px;
   padding: 13px 16px;
   border-radius: 12px;
-  border: 1px solid rgba(139, 92, 246, 0.55);
-  background: linear-gradient(160deg, #6d28d9, #4c1d95);
-  color: #fff;
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  color: #000000;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: filter 0.15s ease, transform 0.15s ease;
 }
 
-.btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+.btn:hover { filter: brightness(0.85); transform: translateY(-1px); }
 
 .btn.ghost {
-  background: rgba(139, 92, 246, 0.08);
-  color: #c4b5fd;
+  background: transparent;
+  color: #ffffff;
+  border-color: #4d4d4d;
 }
+
+.btn.ghost:hover { border-color: #ffffff; }
 
 .link-item {
   display: block;
   margin-top: 10px;
   padding: 11px 14px;
   border-radius: 10px;
-  border: 1px dashed rgba(167, 139, 250, 0.4);
-  color: #d6d0ee;
+  border: 1px dashed #4d4d4d;
+  color: #e8e8e8;
   text-decoration: none;
   font-size: 0.95rem;
 }
 
-.link-item:hover { border-color: #a78bfa; background: rgba(139, 92, 246, 0.1); }
+.link-item:hover { border-color: #ffffff; background: rgba(255, 255, 255, 0.06); }
 
 .coming-soon {
   text-align: center;
   padding: 26px 10px;
-  color: #9d97b8;
+  color: #b5b5b5;
   font-size: 1.05rem;
   letter-spacing: 0.08em;
 }
@@ -147,7 +147,7 @@ main {
 footer {
   margin-top: auto;
   padding: 22px;
-  color: #5f5a78;
+  color: #666666;
   font-size: 0.8rem;
   position: relative;
   z-index: 1;
