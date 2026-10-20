@@ -175,3 +175,17 @@ footer {
   font-size: 0.95rem;
   line-height: 1.55;
 }
+
+/* ===== Professional cards ===== */
+.pro-card { align-items: center; gap: 15px; }
+.pro-icon { font-size: 1.9rem; line-height: 1; filter: drop-shadow(0 0 10px rgba(255,255,255,0.25)); flex-shrink: 0; }
+.pro-text { flex: 1; min-width: 0; }
+.pro-text h2 { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.02em; }
+.pro-text p { color: #8f8f8f; font-size: 0.82rem; margin-top: 5px; letter-spacing: 0.04em; }
+.card.pro-card:hover { border-color: #ffffff; box-shadow: 0 10px 34px rgba(255,255,255,0.14); }
+/* hero divider */
+header::after {
+  content: ""; display: block; width: 120px; height: 2px; margin: 22px auto 0;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  opacity: 0.6;
+}
