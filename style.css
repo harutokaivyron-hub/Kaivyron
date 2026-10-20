@@ -211,3 +211,11 @@ header::after {
 .settings-menu.show { display: block; }
 .settings-menu button { display: block; width: 100%; background: none; border: none; color: #ffffff; padding: 10px 20px; font-size: 0.9rem; cursor: pointer; border-radius: 6px; white-space: nowrap; }
 .settings-menu button:hover { background: #ffffff; color: #000000; }
+
+#kv-lock { position: fixed; inset: 0; background: #000000; z-index: 9999; display: flex; align-items: center; justify-content: center; }
+.kv-lock-box { text-align: center; padding: 20px; }
+.kv-lock-sub { color: #8f8f8f; margin: 14px 0 22px; letter-spacing: 0.12em; font-size: 0.85rem; }
+#kv-lock input { display: block; margin: 0 auto 14px; background: #111111; border: 1px solid #4d4d4d; color: #ffffff; border-radius: 10px; padding: 12px 16px; font-size: 1rem; text-align: center; width: 220px; outline: none; }
+#kv-lock input:focus { border-color: #ffffff; }
+#kv-lock button { background: #ffffff; color: #000000; border: none; border-radius: 10px; padding: 12px 44px; font-size: 1rem; font-weight: 700; cursor: pointer; }
+.kv-err { color: #ff5555; margin-top: 12px; min-height: 20px; font-size: 0.85rem; }
