@@ -78,6 +78,8 @@ main {
 .sub-card { padding: 15px 18px; border-radius: 12px; margin-top: 12px; }
 .sub-card h3 { font-size: 1.05rem; font-weight: 600; }
 
+a.sub-card { text-decoration: none; color: inherit; }
+
 .arrow {
   font-size: 1.2rem;
   color: #ffffff;
