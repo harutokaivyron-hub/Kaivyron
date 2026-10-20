@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAIVYRON — Important</title>
+<link rel="stylesheet" href="style.css?v=11">
+</head>
+<body>
+  <div class="glow"></div>
+
+  <header>
+    <h1 class="logo small">KAIVYRON</h1>
+    <p class="tagline">Important...</p>
+  </header>
+
+  <main>
+    <a class="btn ghost" href="index.html">← Back to Home</a>
+
+    <section class="info-block">
+      <h2>Important...</h2>
+      <div class="text-block">
+        <p>Yahan important text aayega — Haruto jald likhega.</p>
+      </div>
+    </section>
+
+    <button class="edit-btn" id="editBtn">Edit</button>
+  </main>
+
+  <footer>
+    <p>© 2026 Kaivyron — All rights reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById('editBtn').onclick = function () {
+      var code = prompt('Code dalo:');
+      if (code === null) return;
+      if (code.trim() === '12072012') {
+        window.location.href = 'https://github.com/harutokaivyron-hub/Kaivyron/edit/main/important.html';
+      } else {
+        alert('Galat code!');
+      }
+    };
+  </script>
+</body>
+</html>

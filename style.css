@@ -204,3 +204,6 @@ header::after {
 
 .text-block { background: #111111; border: 1px solid #4d4d4d; border-radius: 12px; padding: 18px; margin-top: 12px; }
 .text-block p { font-size: 0.95rem; line-height: 1.7; color: #d5d5d5; }
+
+.edit-btn { display: block; margin: 26px auto 0; background: #111111; color: #8f8f8f; border: 1px solid #4d4d4d; border-radius: 10px; padding: 10px 30px; font-size: 0.85rem; cursor: pointer; letter-spacing: 0.05em; }
+.edit-btn:hover { color: #ffffff; border-color: #ffffff; }
