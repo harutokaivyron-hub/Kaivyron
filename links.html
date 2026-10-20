@@ -262,16 +262,25 @@
     (function () {
       var show = new URLSearchParams(window.location.search).get('show');
       if (!show) return;
-      var target = document.getElementById(show);
-      if (!target) return;
+      // Groups: ek "show" se multiple blocks (Grow your Mind = Philosophy + Mindset YouTube + Mindset Instagram).
+      var groups = {
+        'growmind': ['growmind-philosophy', 'growmind-mindset-youtube', 'growmind-mindset-instagram']
+      };
+      var groupTitles = { 'growmind': '🌱 Grow your Mind' };
+      var targets = groups[show] || [show];
+      var blocks = [];
+      targets.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) blocks.push(el);
+      });
+      if (!blocks.length) return;
       document.querySelectorAll('.cat-block').forEach(function (b) {
-        b.style.display = (b === target) ? '' : 'none';
+        b.style.display = (blocks.indexOf(b) !== -1) ? '' : 'none';
       });
       document.querySelectorAll('.cat-pdf').forEach(function (a) {
-        a.style.display = (a.getAttribute('data-cat') === show) ? '' : 'none';
+        a.style.display = (targets.indexOf(a.getAttribute('data-cat')) !== -1) ? '' : 'none';
       });
-      var heading = target.querySelector('h2');
-      if (heading) document.getElementById('page-subtitle').textContent = heading.textContent;
+      document.getElementById('page-subtitle').textContent = groupTitles[show] || (blocks[0].querySelector('h2') ? blocks[0].querySelector('h2').textContent : '');
     })();
   </script>
 </body>

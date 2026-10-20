@@ -80,6 +80,7 @@ main {
 .sub-toggle { cursor: pointer; user-select: none; }
 
 a.sub-card { text-decoration: none; color: inherit; }
+a.card { text-decoration: none; color: inherit; display: flex; }
 
 .arrow {
   font-size: 1.2rem;
