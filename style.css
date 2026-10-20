@@ -175,3 +175,9 @@ footer {
   font-size: 0.95rem;
   line-height: 1.55;
 }
+
+.card.has-banner { flex-direction: column; align-items: stretch; padding: 0; overflow: hidden; }
+.card.has-banner .banner { height: 130px; background-size: cover; background-position: center; }
+.card.has-banner .card-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; }
+.card.has-banner .arrow { transition: transform .25s ease; }
+.card.has-banner.open .arrow { transform: rotate(180deg); }
