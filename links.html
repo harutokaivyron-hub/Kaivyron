@@ -11,26 +11,44 @@
 
   <header>
     <h1 class="logo small">KAIVYRON</h1>
-    <p class="tagline">Links & Details</p>
+    <p class="tagline" id="page-subtitle">Links & Details</p>
   </header>
 
   <main>
     <a class="btn ghost" href="index.html">← Back to Home</a>
 
-    <!-- ============ YOUTUBE LINKS ============ -->
-    <section class="info-block" id="youtube">
-      <h2>▶️ YouTube — Links & Details</h2>
+    <!-- ===== Dark World Updates → YouTube ===== -->
+    <section class="info-block cat-block" id="dwu-youtube">
+      <h2>🌑 Dark World Updates — ▶️ YouTube</h2>
       <p class="details">Details yahan aayenge — Haruto jald update karega.</p>
-      <!-- Haruto: yahan apne asli links lagana — abhi placeholder hain -->
+      <!-- Haruto: yahan Dark World Updates / YouTube ke asli links lagana -->
       <a class="link-item" href="#" target="_blank" rel="noopener">Link 1 — coming soon</a>
       <a class="link-item" href="#" target="_blank" rel="noopener">Link 2 — coming soon</a>
     </section>
 
-    <!-- ============ INSTAGRAM LINKS ============ -->
-    <section class="info-block" id="instagram">
-      <h2>📸 Instagram — Links & Details</h2>
+    <!-- ===== Dark World Updates → Instagram ===== -->
+    <section class="info-block cat-block" id="dwu-instagram">
+      <h2>🌑 Dark World Updates — 📸 Instagram</h2>
       <p class="details">Details yahan aayenge — Haruto jald update karega.</p>
-      <!-- Haruto: yahan apne asli links lagana — abhi placeholder hain -->
+      <!-- Haruto: yahan Dark World Updates / Instagram ke asli links lagana -->
+      <a class="link-item" href="#" target="_blank" rel="noopener">Link 1 — coming soon</a>
+      <a class="link-item" href="#" target="_blank" rel="noopener">Link 2 — coming soon</a>
+    </section>
+
+    <!-- ===== Dark Reality → YouTube ===== -->
+    <section class="info-block cat-block" id="dr-youtube">
+      <h2>🌑 Dark Reality — ▶️ YouTube</h2>
+      <p class="details">Details yahan aayenge — Haruto jald update karega.</p>
+      <!-- Haruto: yahan Dark Reality / YouTube ke asli links lagana -->
+      <a class="link-item" href="#" target="_blank" rel="noopener">Link 1 — coming soon</a>
+      <a class="link-item" href="#" target="_blank" rel="noopener">Link 2 — coming soon</a>
+    </section>
+
+    <!-- ===== Dark Reality → Instagram ===== -->
+    <section class="info-block cat-block" id="dr-instagram">
+      <h2>🌑 Dark Reality — 📸 Instagram</h2>
+      <p class="details">Details yahan aayenge — Haruto jald update karega.</p>
+      <!-- Haruto: yahan Dark Reality / Instagram ke asli links lagana -->
       <a class="link-item" href="#" target="_blank" rel="noopener">Link 1 — coming soon</a>
       <a class="link-item" href="#" target="_blank" rel="noopener">Link 2 — coming soon</a>
     </section>
@@ -39,5 +57,22 @@
   <footer>
     <p>© 2026 Kaivyron — All rights reserved</p>
   </footer>
+
+  <script>
+    // Sirf wahi category dikhao jahan se visitor aaya hai.
+    // Example: links.html?show=dr-youtube -> sirf "Dark Reality — YouTube" block.
+    // Koi param na ho toh saare blocks dikhte hain.
+    (function () {
+      var show = new URLSearchParams(window.location.search).get('show');
+      if (!show) return;
+      var target = document.getElementById(show);
+      if (!target) return;
+      document.querySelectorAll('.cat-block').forEach(function (b) {
+        b.style.display = (b === target) ? '' : 'none';
+      });
+      var heading = target.querySelector('h2');
+      if (heading) document.getElementById('page-subtitle').textContent = heading.textContent;
+    })();
+  </script>
 </body>
 </html>
