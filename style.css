@@ -189,4 +189,6 @@ header::after {
   opacity: 0.6;
 }
 
-.last-upd { font-size: 0.72rem; color: #8f8f8f; letter-spacing: 0.03em; white-space: nowrap; }
+.last-upd { font-size: 0.72rem; color: #8f8f8f; letter-spacing: 0.03em; white-space: nowrap; margin-left: 14px; }
+.sub-card { gap: 14px; }
+.sub-card h3 { flex-shrink: 0; }
