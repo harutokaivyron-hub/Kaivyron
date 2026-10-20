@@ -17,6 +17,12 @@
   <main>
     <a class="btn ghost" href="index.html">← Back to Home</a>
 
+    <!-- Category-wise Download PDF — sirf selected category wala dikhta hai -->
+    <a class="btn cat-pdf" data-cat="dwu-youtube" href="files/dark-world-updates.pdf" download style="display:none">📄 Download PDF</a>
+    <a class="btn cat-pdf" data-cat="dwu-instagram" href="files/dark-world-updates.pdf" download style="display:none">📄 Download PDF</a>
+    <a class="btn cat-pdf" data-cat="dr-youtube" href="files/dark-world-updates.pdf" download style="display:none">📄 Download PDF</a>
+    <a class="btn cat-pdf" data-cat="dr-instagram" href="files/dark-world-updates.pdf" download style="display:none">📄 Download PDF</a>
+
     <!-- ===== Dark World Updates → YouTube ===== -->
     <section class="info-block cat-block" id="dwu-youtube">
       <h2>🌑 Dark World Updates — ▶️ YouTube</h2>
@@ -69,6 +75,9 @@
       if (!target) return;
       document.querySelectorAll('.cat-block').forEach(function (b) {
         b.style.display = (b === target) ? '' : 'none';
+      });
+      document.querySelectorAll('.cat-pdf').forEach(function (a) {
+        a.style.display = (a.getAttribute('data-cat') === show) ? '' : 'none';
       });
       var heading = target.querySelector('h2');
       if (heading) document.getElementById('page-subtitle').textContent = heading.textContent;
