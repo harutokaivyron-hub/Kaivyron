@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KAIVYRON — Important</title>
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
   <div class="glow"></div>
@@ -12,6 +12,10 @@
   <header>
     <h1 class="logo small">KAIVYRON</h1>
     <p class="tagline">Important...</p>
+    <button class="settings-btn" id="settingsBtn" title="Settings">⚙️</button>
+    <div class="settings-menu" id="settingsMenu">
+      <button id="editTextBtn">Edit Text</button>
+    </div>
   </header>
 
   <main>
@@ -24,7 +28,6 @@
       </div>
     </section>
 
-    <button class="edit-btn" id="editBtn">Edit</button>
   </main>
 
   <footer>
@@ -32,7 +35,15 @@
   </footer>
 
   <script>
-    document.getElementById('editBtn').onclick = function () {
+    var sBtn = document.getElementById('settingsBtn');
+    var sMenu = document.getElementById('settingsMenu');
+    sBtn.onclick = function (e) {
+      e.stopPropagation();
+      sMenu.classList.toggle('show');
+    };
+    document.onclick = function () { sMenu.classList.remove('show'); };
+    document.getElementById('editTextBtn').onclick = function () {
+      sMenu.classList.remove('show');
       var code = prompt('Code dalo:');
       if (code === null) return;
       if (code.trim() === '12072012') {
