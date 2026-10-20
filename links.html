@@ -22,8 +22,8 @@
     <a class="btn cat-pdf" data-cat="dwu-instagram" href="files/dwu-instagram.pdf" download style="display:none">📄 Download PDF</a>
     <a class="btn cat-pdf" data-cat="dr-youtube" href="files/dr-youtube.pdf" download style="display:none">📄 Download PDF</a>
     <a class="btn cat-pdf" data-cat="dr-instagram" href="files/dark-world-updates.pdf" download style="display:none">📄 Download PDF</a>
-        <a class="btn cat-pdf" data-cat="growmind-mindset-youtube" href="files/growmind-mindset.pdf" download style="display:none">
-    <a class="btn cat-pdf" data-cat="growmind-mindset-instagram" href="files/growmind-mindset-instagram.pdf" download style="display:none">📄 Download PDF</a>
+        <a class="btn cat-pdf" data-cat="growmind-youtube" href="files/growmind-mindset.pdf" download style="display:none">
+    <a class="btn cat-pdf" data-cat="growmind-instagram" href="files/growmind-mindset-instagram.pdf" download style="display:none">📄 Download PDF</a>
     <a class="btn cat-pdf" data-cat="wu-youtube" href="files/wu-youtube.pdf" download style="display:none">📄 Download PDF</a>
     <a class="btn cat-pdf" data-cat="wu-instagram" href="files/wu-instagram.pdf" download style="display:none">📄 Download PDF</a>
 
@@ -80,10 +80,10 @@
       <a class="link-item" href="#" target="_blank" rel="noopener">Link 2 — coming soon</a>
     </section>
 
-    <!-- ===== Grow your Mind → Mindset → YouTube ===== -->
-    <section class="info-block cat-block" id="growmind-mindset-youtube">
-      <h2>🌱 Grow your Mind — 💪 Mindset — ▶️ YouTube</h2>
-      <p class="details">Grow your Mind ke Mindset channels — click karke channel kholo.</p>
+    <!-- ===== Grow your Mind → YouTube ===== -->
+    <section class="info-block cat-block" id="growmind-youtube">
+      <h2>🌱 Grow your Mind — ▶️ YouTube</h2>
+      <p class="details">Grow your Mind ke YouTube channels — click karke channel kholo.</p>
       <a class="link-item" href="https://youtube.com/@abhay.create?si=ed_Giorr9_NaPoYH" target="_blank" rel="noopener">📺 @abhay.create — Short Video</a>
       <a class="link-item" href="https://youtube.com/@bullet_proof1105?si=lqdF28Zx4TDms2m6" target="_blank" rel="noopener">📺 @bullet_proof1105 — Long + Short Video</a>
       <a class="link-item" href="https://youtube.com/@vaibhavkadnar?si=NZi0adbTm3KbzIKo" target="_blank" rel="noopener">📺 @vaibhavkadnar — Long Video</a>
@@ -97,10 +97,10 @@
       <a class="link-item" href="https://youtube.com/@astheticavi?si=uUkVJyjBMAr-Dk49" target="_blank" rel="noopener">📺 @astheticavi</a>
       <a class="link-item" href="https://youtube.com/@vaibhavkadnarexplains?si=uKCFelsDgOKd4VSP" target="_blank" rel="noopener">📺 @vaibhavkadnarexplains — Long Video</a>
     </section>
-    <!-- ===== Grow your Mind → Mindset → Instagram ===== -->
-    <section class="info-block cat-block" id="growmind-mindset-instagram">
-      <h2>🌱 Grow your Mind — 💪 Mindset — 📸 Instagram</h2>
-      <p class="details">Grow your Mind ke Mindset Instagram accounts — click karke profile kholo.</p>
+    <!-- ===== Grow your Mind → Instagram ===== -->
+    <section class="info-block cat-block" id="growmind-instagram">
+      <h2>🌱 Grow your Mind — 📸 Instagram</h2>
+      <p class="details">Grow your Mind ke Instagram accounts — click karke profile kholo.</p>
       <a class="link-item" href="https://www.instagram.com/abhaycreate?stkn=MW9hb2J5Z3Q3bnI0Yg==" target="_blank" rel="noopener">📸 @abhaycreate</a>
       <a class="link-item" href="https://www.instagram.com/think_with_yash_?stkn=MWl1amF4N2FtY2ttYQ==" target="_blank" rel="noopener">📸 @think_with_yash_</a>
       <a class="link-item" href="https://www.instagram.com/rajshamani?stkn=MWh4OHFueGZob2hxeQ==" target="_blank" rel="noopener">📸 @rajshamani</a>
@@ -253,25 +253,16 @@
     (function () {
       var show = new URLSearchParams(window.location.search).get('show');
       if (!show) return;
-      // Groups: ek "show" se multiple blocks (Grow your Mind = Philosophy + Mindset YouTube + Mindset Instagram).
-      var groups = {
-        'growmind': ['growmind-mindset-youtube', 'growmind-mindset-instagram']
-      };
-      var groupTitles = { 'growmind': '🌱 Grow your Mind' };
-      var targets = groups[show] || [show];
-      var blocks = [];
-      targets.forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el) blocks.push(el);
-      });
-      if (!blocks.length) return;
+      var target = document.getElementById(show);
+      if (!target) return;
       document.querySelectorAll('.cat-block').forEach(function (b) {
-        b.style.display = (blocks.indexOf(b) !== -1) ? '' : 'none';
+        b.style.display = (b === target) ? '' : 'none';
       });
       document.querySelectorAll('.cat-pdf').forEach(function (a) {
-        a.style.display = (targets.indexOf(a.getAttribute('data-cat')) !== -1) ? '' : 'none';
+        a.style.display = (a.getAttribute('data-cat') === show) ? '' : 'none';
       });
-      document.getElementById('page-subtitle').textContent = groupTitles[show] || (blocks[0].querySelector('h2') ? blocks[0].querySelector('h2').textContent : '');
+      var heading = target.querySelector('h2');
+      if (heading) document.getElementById('page-subtitle').textContent = heading.textContent;
     })();
   </script>
 </body>
